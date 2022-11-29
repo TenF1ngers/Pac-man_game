@@ -14,9 +14,14 @@ const int32_t kSmoothnessFactor = 800;
 const int32_t kMapHeight = 21;
 const int32_t kMapWidth = 23;
 
-using Map = std::array<std::string, kMapHeight>;
+enum Cell {
+  Door, Empty, Energizer, Pellet, Wall
+};
 
-const Map kMapSketch = {
+using kMap = std::array<std::string, kMapHeight>;
+using Map = std::array<std::array<Cell, kMapWidth>, kMapHeight>;
+
+const kMap kMapSketch = {
         "  ###################  ",
         "  #........#........#  ",
         "  #o##.###.#.###.##o#  ",
@@ -44,7 +49,3 @@ const float kSpeedOfPacman = 0.3;
 const int32_t kMultiXPacman = 10;
 const int32_t kMultiYPacman = 15;
 const float kFactorOfInteraction = 1.6;
-
-enum Cell {
-  Door, Empty, Energizer, Pellet, Wall
-};

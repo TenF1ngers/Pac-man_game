@@ -6,4 +6,4 @@
 #include <string>
 #include <array>
 
-void ConvertSketch(const Map& map_sketch, Map& map);
+void ConvertSketch(const kMap& map_sketch, Map& map);

@@ -18,7 +18,7 @@ class ListOfCharacters {
               inky(creators.inky_create->CharactersManager()), clyde(creators.clyde_create->CharactersManager()) {
   }
 
-  void Update(Map& map, double& current_frame, double& time) const {
+  void Update(Map& map, double& current_frame, double& time) {
     pacman->Update(map, current_frame, time);
     blinky->Update(map, current_frame, time);
     pinky->Update(map, current_frame, time);

@@ -190,8 +190,7 @@ void InteractionWithMap(Pacman& pacman, std::array<std::array<Cell, kMapWidth>, 
   pacman.picture.sprite.setPosition(pacman.position.x, pacman.position.y);
 }
 
-
-void Pacman::Update(std::array<std::array<Cell, kMapWidth>, kMapHeight>& map, double& current_frame, double& time) {
+void Pacman::Update(Map& map, double& current_frame, double& time) {
   ProcessClick(*this, current_frame, time);
   if (this->direction == 1) {
     this->moving.dx = this->moving.speed;

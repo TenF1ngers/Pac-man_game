@@ -9,8 +9,8 @@ void GameProcess(sf::RenderWindow& window) {
   ListOfCreators creators;
   ListOfCharacters characters(creators);
 
-  std::array<std::string, kMapHeight> map_sketch = kMapSketch;
-  std::array<std::array<Cell, kMapWidth>, kMapHeight> map{};
+  auto map_sketch = kMapSketch;
+  Map map;
   ConvertSketch(map_sketch, map);
 
   sf::Clock clock;
@@ -19,9 +19,9 @@ void GameProcess(sf::RenderWindow& window) {
   GameText g_text("../Images/Font.ttf");
   GameText level_text("../Images/Font.ttf");
 
-  bool isGameGoing = true;
+  bool is_game_going = true;
 
-  while (window.isOpen() && isGameGoing) {
+  while (window.isOpen() && is_game_going) {
 
     double time = static_cast<double>(clock.getElapsedTime().asMicroseconds());
     clock.restart();
@@ -44,7 +44,7 @@ void GameProcess(sf::RenderWindow& window) {
     window.display();
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-      isGameGoing = false;
+      is_game_going = false;
       RestartGame(map, characters);
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
       RestartGame(map, characters);

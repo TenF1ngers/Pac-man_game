@@ -1,6 +1,6 @@
 #include <../Headers/ConvertSketch.h>
 
-void ConvertSketch(const std::array<std::string, kMapHeight>& map_sketch, std::array<std::array<Cell, kMapWidth>, kMapHeight>& map) {
+void ConvertSketch(const kMap& map_sketch, Map& map) {
   for (int32_t i = 0; i < kMapHeight; ++i) {
     for (int32_t j = 0; j < kMapWidth; ++j) {
       map[i][j] = Cell::Empty;

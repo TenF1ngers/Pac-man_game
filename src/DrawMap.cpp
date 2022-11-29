@@ -2,7 +2,7 @@
 
 #include <../Headers/DrawMap.h>
 
-void DrawMap(std::array<std::array<Cell, kMapWidth>, kMapHeight>& map, sf::RenderWindow& window) {
+void DrawMap(Map& map, sf::RenderWindow& window) {
   PictureOfCell cell_picture;
   cell_picture.image.loadFromFile("../Images/Map16.png");
   cell_picture.texture.loadFromImage(cell_picture.image);
@@ -66,6 +66,9 @@ void DrawMap(std::array<std::array<Cell, kMapWidth>, kMapHeight>& map, sf::Rende
           cell_picture.sprite.setTextureRect(sf::IntRect(kCellSize * (down + 2 * (left + 2 * (right + 2 * up))), 0, kCellSize, kCellSize));
           cell_picture.sprite.setScale(kMultiplier, kMultiplier);
           window.draw(cell_picture.sprite);
+          break;
+        }
+        case Cell::Empty: {
           break;
         }
       }

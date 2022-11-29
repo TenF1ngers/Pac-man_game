@@ -1,6 +1,6 @@
 #include <Pinky.h>
 
-void Pinky::Update(std::array<std::array<Cell, kMapWidth>, kMapHeight>& map, double& current_frame, double& time) {
+void Pinky::Update(Map& map, double& current_frame, double& time) {
 }
 
 sf::Sprite Pinky::GetSprite() const {
